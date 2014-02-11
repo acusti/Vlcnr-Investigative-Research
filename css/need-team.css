@@ -36,10 +36,10 @@
   -o-transition-property: border-width, border-radius, border-color, top, left, width, -o-transform, box-shadow;
   -webkit-transition-property: border-width, border-radius, border-color, top, left, width, -webkit-transform, box-shadow;
   transition-property: border-width, border-radius, border-color, top, left, width, transform, box-shadow;
-  -moz-transition-duration: 5s;
-  -o-transition-duration: 5s;
-  -webkit-transition-duration: 5s;
-  transition-duration: 5s;
+  -moz-transition-duration: 4s;
+  -o-transition-duration: 4s;
+  -webkit-transition-duration: 4s;
+  transition-duration: 4s;
   -moz-transition-property: ease-in-out;
   -o-transition-property: ease-in-out;
   -webkit-transition-property: ease-in-out;

@@ -1,0 +1,45 @@
+// ======================
+// Compass/plugin imports
+// ======================
+
+// Import core compass framework http://compass-style.org/reference/compass/
+@import "compass"
+// Import and apply global reset
+@import "compass/reset"
+// Import vertical rhythm http://compass-style.org/reference/compass/typography/vertical_rhythm/
+@import "compass/typography/vertical_rhythm"
+// Import Susy http://susy.oddbird.net/
+@import "susy"
+// Import mixins for CSS3 User Interface module http://compass-style.org/reference/compass/css3/user_interface/
+@import "compass/css3/user-interface"
+// Import sprite helper http://compass-style.org/help/tutorials/spriting/
+@import "compass/utilities/sprites"
+// Import retina mixin https://github.com/joelambert/Retina-Compass-Helpers
+// With updated high-res media query from https://github.com/acusti/Retina-Compass-Helpers/
+@import "retina"
+
+
+// ======================
+// Functions and mixins
+// ======================
+
+// Import custom functions and mixins
+// Note: functions come before variables so they can be used anywhere
+@import "helpers"
+
+
+// ======================
+// Variables
+// ======================
+
+@import "global/dimensions"
+@import "global/defaults"
+@import "global/grid"
+@import "global/colors"
+@import "global/breakpoints"
+
+
+// ======================
+// Import CSS partials
+// ======================
+@import "typography"

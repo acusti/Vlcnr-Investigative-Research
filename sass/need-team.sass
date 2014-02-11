@@ -1,0 +1,166 @@
+// ======================
+// Compass/plugin imports
+// ======================
+
+// Import core compass framework http://compass-style.org/reference/compass/
+@import "compass"
+// Import vertical rhythm http://compass-style.org/reference/compass/typography/vertical_rhythm/
+@import "compass/typography/vertical_rhythm"
+// Import Susy http://susy.oddbird.net/
+@import "susy"
+// Import mixins for CSS3 User Interface module http://compass-style.org/reference/compass/css3/user_interface/
+@import "compass/css3/user-interface"
+// Import sprite helper http://compass-style.org/help/tutorials/spriting/
+@import "compass/utilities/sprites"
+// Import retina mixin https://github.com/joelambert/Retina-Compass-Helpers
+// With updated high-res media query from https://github.com/acusti/Retina-Compass-Helpers/
+@import "retina"
+
+
+// ======================
+// Functions and mixins
+// ======================
+
+// Import custom functions and mixins
+// Note: functions come before variables so they can be used anywhere
+@import "helpers"
+
+
+// ======================
+// Variables
+// ======================
+
+@import "global/dimensions"
+@import "global/defaults"
+@import "global/grid"
+@import "global/colors"
+@import "global/breakpoints"
+
+
+// ======================
+// Import CSS partials
+// ======================
+@import "typography"
+@import "logo"
+
+
+// ======================
+// Styles for Need Team
+// ======================
+
+$logo-bckg: rgb(238, 238, 238)
+$venista-logo-width: 60px
+$venista-logo-height: 20px
+
+//= Logo part building blocks
+%logo-part
+	display: block
+	position: absolute
+	content: " "
+	border-style: solid
+	+transition-property(border-width, border-radius, border-color, top, left, width, transform, box-shadow)
+	+transition-duration(5s)
+	+transition-property(ease-in-out)
+	
+%venista-logo-part
+	width: $venista-logo-width
+	height: 0
+	border-width: $venista-logo-height / 2
+	+border-left-radius($venista-logo-height / 2)
+	+box-shadow($logo-bckg 0 0 0 3px)
+
+//= The text descriptions
+.info_container
+	&.vlcnr
+		display: none
+
+		.vlcnrfy &
+			display: block
+
+	&.venista
+		.vlcnrfy &
+			display: none
+
+//= The logos
+.img_container
+	&.vlcnr,
+	&.venista
+		+background(radial-gradient($logo-bckg, $logo-bckg 73px, $logo-bckg, white 75px))
+		padding: 21px
+		// Hovering over the logo area will pause the transitioning and allow you to toggle the class by clicking
+		cursor: pointer
+
+		@media screen and (max-width: 836px)
+			width: 108px
+			height: 108px
+			float: none
+			margin: auto
+
+		.logo
+			position: relative
+			width: 108px
+			height: 108px
+
+			&::before,
+			&::after,
+			& > div::before,
+			& > div::after
+				@extend %logo-part
+			
+			// Red arm
+			&::before
+				@extend %venista-logo-part
+				border-color: rgb(220, 10, 26)
+				+rotate(60deg)
+				top: 50px
+				left: -5px
+				z-index: 2
+
+			// Grey arm
+			& > div::before,
+			&::after
+				@extend %venista-logo-part
+				border-color: $vlcnr-dark-grey
+				+rotate(-180deg)
+				top: 24px
+				left: 16px
+				z-index: 1
+
+			// Black arm
+			& > div::after
+				@extend %venista-logo-part
+				border-color: black
+				+rotate(-60deg)
+				top: 54px
+				left: 29px
+				z-index: 3
+
+			// Grey arm head
+			&::after
+				left: 16px + $venista-logo-width / 2
+				width: $venista-logo-width / 2
+				// Make sure the box-shadow doesn't cut connection between tail and head of grey arm
+				+box-shadow($logo-bckg -3px 0 0 3px)
+				z-index: 4
+
+	&.vlcnr
+		.logo
+			body.vlcnrfy &
+				// Reset venista styles				
+				&::before,
+				&::after,
+				& > div::before,
+				& > div::after
+					width: 0
+					+border-radius(0)
+					+rotate(0deg)
+					+box-shadow(none)
+
+				+vlcnrfy(108px)
+
+//= Other tweaks for new styles
+
+// Top navigation bar should always be over top of logos
+.nav,
+.nav_container
+	z-index: 5

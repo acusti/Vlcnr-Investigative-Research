@@ -1,0 +1,78 @@
+/* =====================
+ * Vlcnr logo
+ * ====================*/
+
+//= Dimensions
+
+$logo-height-ratio: .87
+// Lava
+$lava-width: .36
+$lava-height: .53
+// Right side dark grey
+$right-dark-grey-width: .6667
+$right-dark-grey-height: 1 // Same as height of logo
+// Left side black
+$left-black-width: $right-dark-grey-width
+$left-black-height: 1 // Same as height of logo
+// Right side light grey
+$right-grey-width: .5
+$right-grey-height: .75
+
+
+@mixin vlcnrfy($logo-width)
+	position: relative
+
+	$logo-height: $logo-width * $logo-height-ratio
+
+	&::before,
+	&::after,
+	& > div::before,
+	& > div::after
+		display: block
+		position: absolute
+		content: " "
+		border-style: solid
+
+	// Lava
+	&::before
+		top: 0
+		left: ($logo-width - $logo-width * $lava-width) / 2
+		border-color: $vlcnr-red transparent transparent
+		border-width: ($logo-height * $lava-height) ($logo-width * $lava-width / 2) 0 ($logo-width * $lava-width / 2)
+		// To prevent lava from breaking out beyond the edges, curve the top left and right corners
+		// If small enough, use 4px, else, use a percentage
+		@if $logo-width <= 100px
+			+border-top-radius(4px)
+		@else
+			+border-top-radius(6%)
+	
+	// Right side dark grey
+	& > div::before
+		top: 0
+		left: $logo-width - $logo-width * $right-dark-grey-width
+		border-color: transparent transparent $vlcnr-dark-grey
+		border-width: 0 ($logo-width * $right-dark-grey-width / 2) $logo-height ($logo-width * $right-dark-grey-width / 2)
+
+	// Left side black
+	& > div::after
+		top: 0
+		left: 0
+		border-color: transparent transparent $vlcnr-black
+		border-width: 0 ($logo-width * $left-black-width / 2) $logo-height ($logo-width * $left-black-width / 2)
+	
+	// Right side grey
+	&::after
+		top: $logo-height - ($logo-height * $right-grey-height)
+		// For whatever reason, subtracting 1px from left position for this piece gets consistently better results
+		left: $logo-width - ($logo-width * $right-grey-width) - 1px
+		border-color: transparent transparent $vlcnr-grey
+		border-width: 0 ($logo-width * $right-grey-width / 2) ($logo-height * $right-grey-height) ($logo-width * $right-grey-width / 2)
+	
+// .vlcnr-header
+//     margin: 0
+//     padding: 0 0 0 79px
+//     line-height: 1
+//     height: 122px
+//     font-size: 122px
+//     font-weight: 400
+//     color: rgb(37,40,42)

@@ -1,0 +1,191 @@
+/* 
+ * Retina helper mixins for Compass
+ * http://www.joelambert.co.uk
+ * 
+ * Copyright 2012, Joe Lambert.
+ * Free to use under the MIT license.
+ * http://joelambert.mit-license.org/
+ */
+/* =====================
+ * Typography
+ * ==================== */
+/* line 6, ../sass/_typography.sass */
+.info_page .info_copy h2,
+.info_page p {
+  font-family: eb-garamond, georgia, serif;
+  line-height: 1.41667em; }
+/* line 11, ../sass/_typography.sass */
+.info_page .info_nav a,
+.info_page h1,
+.info_page h3 {
+  font-family: pt-sans-narrow, sans-serif; }
+/* line 16, ../sass/_typography.sass */
+.info_page .info_copy h1 {
+  letter-spacing: 4px; }
+
+/* =====================
+ * Vlcnr logo
+ * ==================== */
+/* line 56, ../sass/need-team.sass */
+.img_container.vlcnr .logo::before, .img_container.vlcnr .logo::after, .img_container.vlcnr .logo > div::before, .img_container.vlcnr .logo > div::after, .img_container.venista .logo::before, .img_container.venista .logo::after, .img_container.venista .logo > div::before, .img_container.venista .logo > div::after {
+  display: block;
+  position: absolute;
+  content: " ";
+  border-style: solid;
+  -moz-transition-property: border-width, border-radius, border-color, top, left, width, -moz-transform, box-shadow;
+  -o-transition-property: border-width, border-radius, border-color, top, left, width, -o-transform, box-shadow;
+  -webkit-transition-property: border-width, border-radius, border-color, top, left, width, -webkit-transform, box-shadow;
+  transition-property: border-width, border-radius, border-color, top, left, width, transform, box-shadow;
+  -moz-transition-duration: 5s;
+  -o-transition-duration: 5s;
+  -webkit-transition-duration: 5s;
+  transition-duration: 5s;
+  -moz-transition-property: ease-in-out;
+  -o-transition-property: ease-in-out;
+  -webkit-transition-property: ease-in-out;
+  transition-property: ease-in-out; }
+
+/* line 65, ../sass/need-team.sass */
+.img_container.vlcnr .logo::before, .img_container.venista .logo::before, .img_container.vlcnr .logo > div::before, .img_container.vlcnr .logo::after, .img_container.venista .logo > div::before, .img_container.venista .logo::after, .img_container.vlcnr .logo > div::after, .img_container.venista .logo > div::after {
+  width: 60px;
+  height: 0;
+  border-width: 10px;
+  -moz-border-radius-topleft: 10px;
+  -webkit-border-top-left-radius: 10px;
+  border-top-left-radius: 10px;
+  -moz-border-radius-bottomleft: 10px;
+  -webkit-border-bottom-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  -moz-box-shadow: #eeeeee 0 0 0 3px;
+  -webkit-box-shadow: #eeeeee 0 0 0 3px;
+  box-shadow: #eeeeee 0 0 0 3px; }
+
+/* line 74, ../sass/need-team.sass */
+.info_container.vlcnr {
+  display: none; }
+  /* line 77, ../sass/need-team.sass */
+  .vlcnrfy .info_container.vlcnr {
+    display: block; }
+/* line 81, ../sass/need-team.sass */
+.vlcnrfy .info_container.venista {
+  display: none; }
+
+/* line 86, ../sass/need-team.sass */
+.img_container.vlcnr, .img_container.venista {
+  background: -moz-radial-gradient(#eeeeee, #eeeeee 73px, #eeeeee, #ffffff 75px);
+  background: -o-radial-gradient(#eeeeee, #eeeeee 73px, #eeeeee, #ffffff 75px);
+  background: -webkit-radial-gradient(#eeeeee, #eeeeee 73px, #eeeeee, #ffffff 75px);
+  background: radial-gradient(#eeeeee, #eeeeee 73px, #eeeeee, #ffffff 75px);
+  padding: 21px;
+  cursor: pointer; }
+  @media screen and (max-width: 836px) {
+    /* line 86, ../sass/need-team.sass */
+    .img_container.vlcnr, .img_container.venista {
+      width: 108px;
+      height: 108px;
+      float: none;
+      margin: auto; } }
+  /* line 99, ../sass/need-team.sass */
+  .img_container.vlcnr .logo, .img_container.venista .logo {
+    position: relative;
+    width: 108px;
+    height: 108px; }
+    /* line 111, ../sass/need-team.sass */
+    .img_container.vlcnr .logo::before, .img_container.venista .logo::before {
+      border-color: #dc0a1a;
+      -moz-transform: rotate(60deg);
+      -ms-transform: rotate(60deg);
+      -o-transform: rotate(60deg);
+      -webkit-transform: rotate(60deg);
+      transform: rotate(60deg);
+      top: 50px;
+      left: -5px;
+      z-index: 2; }
+    /* line 120, ../sass/need-team.sass */
+    .img_container.vlcnr .logo > div::before, .img_container.vlcnr .logo::after, .img_container.venista .logo > div::before, .img_container.venista .logo::after {
+      border-color: #63666a;
+      -moz-transform: rotate(-180deg);
+      -ms-transform: rotate(-180deg);
+      -o-transform: rotate(-180deg);
+      -webkit-transform: rotate(-180deg);
+      transform: rotate(-180deg);
+      top: 24px;
+      left: 16px;
+      z-index: 1; }
+    /* line 130, ../sass/need-team.sass */
+    .img_container.vlcnr .logo > div::after, .img_container.venista .logo > div::after {
+      border-color: black;
+      -moz-transform: rotate(-60deg);
+      -ms-transform: rotate(-60deg);
+      -o-transform: rotate(-60deg);
+      -webkit-transform: rotate(-60deg);
+      transform: rotate(-60deg);
+      top: 54px;
+      left: 29px;
+      z-index: 3; }
+    /* line 139, ../sass/need-team.sass */
+    .img_container.vlcnr .logo::after, .img_container.venista .logo::after {
+      left: 46px;
+      width: 30px;
+      -moz-box-shadow: #eeeeee -3px 0 0 3px;
+      -webkit-box-shadow: #eeeeee -3px 0 0 3px;
+      box-shadow: #eeeeee -3px 0 0 3px;
+      z-index: 4; }
+/* line 148, ../sass/need-team.sass */
+body.vlcnrfy .img_container.vlcnr .logo {
+  position: relative; }
+  /* line 150, ../sass/need-team.sass */
+  body.vlcnrfy .img_container.vlcnr .logo::before, body.vlcnrfy .img_container.vlcnr .logo::after, body.vlcnrfy .img_container.vlcnr .logo > div::before, body.vlcnrfy .img_container.vlcnr .logo > div::after {
+    width: 0;
+    -moz-border-radius: 0;
+    -webkit-border-radius: 0;
+    border-radius: 0;
+    -moz-transform: rotate(0deg);
+    -ms-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -moz-box-shadow: none;
+    -webkit-box-shadow: none;
+    box-shadow: none; }
+  /* line 27, ../sass/_logo.sass */
+  body.vlcnrfy .img_container.vlcnr .logo::before, body.vlcnrfy .img_container.vlcnr .logo::after, body.vlcnrfy .img_container.vlcnr .logo > div::before, body.vlcnrfy .img_container.vlcnr .logo > div::after {
+    display: block;
+    position: absolute;
+    content: " ";
+    border-style: solid; }
+  /* line 37, ../sass/_logo.sass */
+  body.vlcnrfy .img_container.vlcnr .logo::before {
+    top: 0;
+    left: 34.56px;
+    border-color: #f9423a transparent transparent;
+    border-width: 49.7988px 19.44px 0 19.44px;
+    -moz-border-radius-topleft: 6%;
+    -webkit-border-top-left-radius: 6%;
+    border-top-left-radius: 6%;
+    -moz-border-radius-topright: 6%;
+    -webkit-border-top-right-radius: 6%;
+    border-top-right-radius: 6%; }
+  /* line 50, ../sass/_logo.sass */
+  body.vlcnrfy .img_container.vlcnr .logo > div::before {
+    top: 0;
+    left: 35.9964px;
+    border-color: transparent transparent #63666a;
+    border-width: 0 36.0018px 93.96px 36.0018px; }
+  /* line 57, ../sass/_logo.sass */
+  body.vlcnrfy .img_container.vlcnr .logo > div::after {
+    top: 0;
+    left: 0;
+    border-color: transparent transparent #25282a;
+    border-width: 0 36.0018px 93.96px 36.0018px; }
+  /* line 64, ../sass/_logo.sass */
+  body.vlcnrfy .img_container.vlcnr .logo::after {
+    top: 23.49px;
+    left: 53px;
+    border-color: transparent transparent #888b8d;
+    border-width: 0 27px 70.47px 27px; }
+
+/* line 164, ../sass/need-team.sass */
+.nav,
+.nav_container {
+  z-index: 5; }

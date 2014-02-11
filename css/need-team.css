@@ -9,17 +9,18 @@
 /* =====================
  * Typography
  * ==================== */
-/* line 6, ../sass/_typography.sass */
+@import url(http://fonts.googleapis.com/css?family=Roboto+Condensed:300,700);
+/* line 8, ../sass/_typography.sass */
 .info_page .info_copy h2,
 .info_page p {
   font-family: eb-garamond, georgia, serif;
   line-height: 1.41667em; }
-/* line 11, ../sass/_typography.sass */
+/* line 13, ../sass/_typography.sass */
 .info_page .info_nav a,
 .info_page h1,
 .info_page h3 {
-  font-family: pt-sans-narrow, sans-serif; }
-/* line 16, ../sass/_typography.sass */
+  font-family: "Roboto Condensed", sans-serif; }
+/* line 18, ../sass/_typography.sass */
 .info_page .info_copy h1 {
   letter-spacing: 4px; }
 

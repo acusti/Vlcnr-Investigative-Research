@@ -25,24 +25,25 @@
 			}
 			vlcnrfy_timeout = w.setTimeout(vlcnrfy, 7000);
 		};
-
+	
+	// Set up scroll triggers
 	$win.on('scroll', function() {
 		if (!vlcnrfied) {
 			if (isTargetVisible($logo[0])) {
 				w.setTimeout(vlcnrfy, 1000);
 				$win.off('scroll');
-				$logo.on('mouseenter', function() {
-					if (vlcnrfied) {
-						is_paused = true;
-					}
-				}).on('mouseleave', function() {
-					is_paused = false;
-				}).on('click', function() {
-					w.clearTimeout(vlcnrfy_timeout);
-					vlcnrfy(true);
-				});
 			}
 		}
 	});
-
+	// Set up logo click trigger and pausing
+	$logo.on('mouseenter', function() {
+		if (vlcnrfied) {
+			is_paused = true;
+		}
+	}).on('mouseleave', function() {
+		is_paused = false;
+	}).on('click', function() {
+		w.clearTimeout(vlcnrfy_timeout);
+		vlcnrfy(true);
+	});
 })(jQuery, window, document.documentElement);
